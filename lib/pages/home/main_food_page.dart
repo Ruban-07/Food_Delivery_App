@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/home/food_page_body.dart';
+import 'package:foodie/pages/home/food_page_body.dart';
 import 'package:foodie/utils/colors.dart';
 import 'package:foodie/utils/dimensions.dart';
 import 'package:foodie/widgets/big_text.dart';

@@ -93,34 +93,87 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         // List of food images and texts
-        Container(
-          height: 900,
-          child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(
-                    left: Dimensions.width20,
-                    right: Dimensions.width20,
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 120,
-                        width: 120,
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height10,
+                ),
+                child: Row(
+                  children: [
+                    // Image section
+                    Container(
+                      height: Dimensions.listViewImgSize,
+                      width: Dimensions.listViewImgSize,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius20),
+                          color: Colors.red,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/food6.webp'),
+                          )),
+                    ),
+                    // Text section
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.listViewTextContSize,
                         decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.radius20),
-                            color: Colors.white38,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/food2.webp'),
-                            )),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.radius20),
+                            bottomRight: Radius.circular(Dimensions.radius20),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(text: "Nutritious fruit meal in China"),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SmallText(text: "With chinese characteristics"),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                      icon: Icons.circle_sharp,
+                                      text: 'Normal',
+                                      iconColor: AppColors.iconColor1),
+                                  IconAndTextWidget(
+                                      icon: Icons.location_on,
+                                      text: '1.7km',
+                                      iconColor: AppColors.mainColor),
+                                  IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    text: '32mins',
+                                    iconColor: AppColors.iconColor1,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
-                );
-              }),
-        ),
+                    ),
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
