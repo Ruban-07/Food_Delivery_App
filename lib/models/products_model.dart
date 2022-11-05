@@ -13,7 +13,7 @@ class Product {
     this._totalSize = totalSize;
     this._typeId = typeId;
     this._offset = offset;
-    this._products = products;
+    this._products = products;      
   }
 
   Product.fromJson(Map<String, dynamic> json) {
@@ -37,7 +37,7 @@ class ProductModel {
   int? stars;
   String? img;
   String? location;
-  String? craetedAt;
+  String? createdAt;
   String? updatedAt;
   int? typeId;
 
@@ -49,7 +49,7 @@ class ProductModel {
     this.stars,
     this.img,
     this.location,
-    this.craetedAt,
+    this.createdAt,
     this.updatedAt,
     this.typeId,
   });
@@ -62,7 +62,7 @@ class ProductModel {
     stars = json['stars'];
     img = json['img'];
     location = json['location'];
-    craetedAt = json['craetedAt'];
+    createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     typeId = json['typeId'];
   }
