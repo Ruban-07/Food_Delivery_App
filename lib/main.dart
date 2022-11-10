@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Foodie',
