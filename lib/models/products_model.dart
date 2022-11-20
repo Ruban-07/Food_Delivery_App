@@ -12,7 +12,7 @@ class Product {
       required products}) {
     this._totalSize = totalSize;
     this._typeId = typeId;
-    this._offset = offset;
+    this._offset = offset;  
     this._products = products;      
   }
 
